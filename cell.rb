@@ -1,20 +1,17 @@
+# frozen_string_literal: true
+
 class Cell
-  attr_reader :x, :y, :open, :number_of_bombs
+  attr_reader :x, :y, :opened, :number_of_bombs
   attr_accessor :bomb
 
- def initialize(x, y)
-    x=x
-    y=y
-    @open = false
+  def initialize(x, y)
+    @x = x
+    @y = y
+    @opened = false
     @bomb = false
   end
 
-  def is_open?
-    return @open
+  def open
+    @opened = true unless @opened
   end
-
-  def is_a_bomb?
-    return @bomb
-  end
-
 end
